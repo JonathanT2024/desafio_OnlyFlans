@@ -13,4 +13,8 @@ class Flan(models.Model):
     slug = models.SlugField()
     is_private = models.BooleanField(default=False)
 
-    
+    def __str__(self):
+        name = self.name
+        es_privado = self.is_private
+        return f'Nombre: {name} - ¿Es privado?: {es_privado}'
+
