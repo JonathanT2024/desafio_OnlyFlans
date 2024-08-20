@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onlyflans</title>
+    <title>Bienvenidos Onlyflans</title>
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -14,15 +14,16 @@
 
 </head>
 
+   <div class="container">   
     <header>
         {% block header %}
-        Aqui va el header
+         {% include 'snippets/header.html' %}
         {% endblock %}
     </header>
 
     <navbar>
         {% block navbar %}
-        Aqui va el header
+        {% include 'snippets/nabvar.html' %}
         {% endblock %}
     </navbar>
 
@@ -34,10 +35,12 @@
 
     <footer>
         {% block footer %}
-        Aqui va el footer
-        {% endblock %}
-    </footer>
-
+        <div>
+            <h1 style="background: #00ff40;">Footer</h1>
+            </div>
+            {% endblock %}
+            </footer>
+</div>
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
