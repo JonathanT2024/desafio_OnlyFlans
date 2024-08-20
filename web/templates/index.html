@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
 {% block contect %}
- <h1> Aqui va el Index </h1>
+<h1>Todos los Flanes</h1>
+<div class="row">
+    {% for flan in flanes %}
+    <div class="col-4">
+        <div class="card m-2" style="width: 100%; height: 25%;">
+            <img src="{{ flan.image_url }}" class="card-img-top" alt="..." >
+            <div class="card-body h-50" >
+                <h5 class="card-title">{{ flan.name }}</h5>
+                <p class="card-text">{{ flan.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
