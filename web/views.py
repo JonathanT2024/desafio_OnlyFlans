@@ -30,7 +30,7 @@ def contact(request):
          form = ContactForm(request.POST)
          if form.is_valid():
             Contact.objects.create(
-            **form.cleaned_data
+                **form.cleaned_data
             )
             return redirect('success')
          context = {'form': form}

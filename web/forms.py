@@ -20,7 +20,7 @@ class ContactForm(forms.Form):
     mensaje = forms.CharField(
         label='Mensaje:',
         max_length=500,
-        widget=forms.EmailInput(attrs={
+        widget=forms.Textarea(attrs={
             'class': 'form-control mb-3 mb-3 fst-italic',
             'rows': 5,
             'placeholder': 'Ingrese mensaje. maximo 500 caracteres'

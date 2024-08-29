@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block contect %}
-<h1>Contacto </h1>
+<h1 class="mt-3">Contacto </h1>
 <p>Puedes escribir en caso que tengas dudas o requerimientos. </p>
-<div class="row">
+<div class="row m-3">
   <div class="col-6">
     <form action="{% url 'contact' %}" method="post">
       {% csrf_token %}
