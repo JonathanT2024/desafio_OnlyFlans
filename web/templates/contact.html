@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contect %}
+<h1>Contacto </h1>
+<p>Puedes escribir en caso que tengas dudas o requerimientos. </p>
+<div class="row">
+  <div class="col-6">
+    <form action="{% url 'contact' %}" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from web.models import Flan
+from django.shortcuts import render, redirect
+from web.models import Flan, Contact
+from web.forms import ContactForm                                                      
 
 # Create your views here.
 
@@ -19,3 +20,24 @@ def welcome(request):
         'flanes': flanes_privados
     }
     return render(request, 'welcome.html', context)
+
+def contact(request):
+     if request.method == 'GET':
+        form = ContactForm()
+        context = {'form': form}
+        return render(request, 'contact.html', context)
+     else:
+         form = ContactForm(request.POST)
+         if form.is_valid():
+            Contact.objects.create(
+            **form.cleaned_data
+            )
+            return redirect('success')
+         context = {'form': form}
+         return render(request, 'contact.html', context)
+        
+def success(request):
+    return render(request, 'success.html')
+   
+
+    
