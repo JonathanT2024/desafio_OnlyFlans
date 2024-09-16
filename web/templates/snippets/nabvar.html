@@ -23,7 +23,7 @@
         </ul>
         {% if user.is_authenticated %}
         <div>
-            <span class="nav-link text-primary ms-5">Bienvenido, {{ user.get_username }}</span>
+            <span class="nav-link text-primary ms-5">Bienvenido, {{ user.first_name }}</span>
         </div>
         <form id="logout-form" action="{% url 'logout' %}" method="POST">
             {% csrf_token %}
@@ -36,7 +36,7 @@
             <a href="{% url 'login' %}" class="btn btn-primary mx-1 btn-sm">Ingresar</a>
         </div>
         <div>
-            <a href="#" class="btn btn-info ms-2 btn-sm">Registrar</a>
+            <a href="{% url 'register' %}" class="btn btn-info ms-2 btn-sm">Registrar</a>
         </div>
         
         {% endif %}

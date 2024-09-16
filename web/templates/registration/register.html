@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block contect %}
+<div class="container">
+    <h3 class="text-center my-4">Registrate</h3>
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+
+        <div class="row g-3 align-items-center mb-2">
+            <div class="col-2 offset-2 mb-1">
+                <label class="form-label">Username:</label>
+            </div>
+            <div class="col-5">
+                <input type="text" id="" class="form-control" name="username" placeholder=""
+                    value="{{ username | default:'' }}" required>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center mb-2">
+            <div class="col-2 offset-2 mb-1">
+                <label class="form-label">Nombre:</label>
+            </div>
+            <div class="col-5">
+                <input type="text" id="" class="form-control" name="first_name" placeholder=""
+                    value="{{ firt_name | default:'' }}" required>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center mb-2">
+            <div class="col-2 offset-2 mb-1">
+                <label class="form-label">Email:</label>
+            </div>
+            <div class="col-5">
+                <input type="email" id="" class="form-control" name="email" placeholder=""
+                    value="{{ email | default:'' }}" required>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center mb-2">
+            <div class="col-2 offset-2 mb-1">
+                <label class="form-label">Ingresar Contraseña:</label>
+            </div>
+            <div class="col-5">
+                <input type="password" id="" class="form-control" name="password" placeholder=""
+                    value="{{ password | default:'' }}" required>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center mb-2">
+            <div class="col-2 offset-2 mb-1">
+                <label class="form-label">Repita contraseña:</label>
+            </div>
+            <div class="col-5">
+                <input type="password" id="" class="form-control" name="password_repeat" placeholder=""
+                    value="{{ password_repeat | default:'' }}" required>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-sm btn-primary my-3">Registrarse</button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
